@@ -1,0 +1,44 @@
+/*
+Sharif Hasan - CSE, PUST
+Dec 06, 2019 07: 26 PM 
+*/
+#include<bits/stdc++.h>
+#define br cout<<"\n"
+#define FOR(i,n) for(i=0;i<n;i++)
+#define FROM(a,i,n) for(i=a;i<n;i++)
+#define IOS ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+using namespace std;
+class vertex{
+  public:
+    vertex(){
+        from=to=weight=0;
+    }
+    void feed(int f,int t,int w){
+        from = f;
+        to = t;
+        weight = w;
+    }
+    bool operator < (vertex a){
+        return weight<a.weight;
+    }
+    bool operator > (vertex a){
+        return weight>a.weight;
+    }
+    bool operator = (vertex a){
+        return weight=a.weight;
+    }
+    
+  private:
+    int from,to,weight;
+};
+/*Main function*/
+int main()
+{
+vertex v1,v2;
+v1.feed(1,2,3);
+v2.feed(4,5,6);
+cout<<(v1<v2);
+
+return 0;
+}
